@@ -64,8 +64,8 @@ function displayPredicted(results){
        elem.setAttribute("width", imageWidthAndHeight);
        
        document.getElementById("computer_done").appendChild(elem);
-       var textparagraph = document.createElement("p");
-       textparagraph.textContent = points + " points";
+       var textparagraph = document.createTextNode(points+" points - " + namemapping[party] ) ;
+       //textparagraph.textContent = points + " points";
        document.getElementById("computer_done").appendChild(textparagraph);
        var newline = document.createElement("br");
        document.getElementById("computer_done").appendChild(newline);
@@ -183,29 +183,30 @@ $(document).ready(function(){
         
         <textarea class="mytextstuff" id="input_field_user" rows="1" width='300px' type="text" placeholder="Dieren zijn belangrijk" value maxlength="150"></textarea>
         <button>Submit</button>
-        
+        <br>
         
 
-<div class="alert alert-success" role="alert" id="computer_understood">
-  
-</div>
-<div class="alert alert-success" role="alert" id="computer_done">
-  
-</div>
-<div class="alert alert-info" role="alert" id="computer_thinking" >
-  De computer denkt na...
-</div>
-<div class="alert alert-error" role="alert" id="computer_broken" >
-  De computer is kapot... Probeer het nadat je onveilige scripts toe hebt gestaan:
-    <img src="img/loadunsafe.png"></img>
-</div>
+        <div class="alert alert-success" role="alert" id="computer_understood">
+
+        </div>
+        <div class="alert alert-success" role="alert" id="computer_done">
+
+        </div>
+        <div class="alert alert-info" role="alert" id="computer_thinking" >
+          De computer denkt na...
+        </div>
+        <div class="alert alert-error" role="alert" id="computer_broken" >
+          De computer is kapot... Probeer het nadat je onveilige scripts toe hebt gestaan:
+            <img src="img/loadunsafe.png">
+        </div>
       
       Probeer eens:
-
-Door te werken aan een duurzame, reele economie creeren we groene en echte banen.
-Nederland versterkt de internationale terrorismebestrijding, de inlichtingendiensten en de aanpak van jihadisten.
-In Nederland gedraag je je. Als je dat doet, dan zijn de mogelijkheden eindeloos.
-        
+      <ul>
+          <li>Door te werken aan een duurzame, reele economie creeren we groene en echte banen.</li>
+            <li>Nederland versterkt de internationale terrorismebestrijding, de inlichtingendiensten en de aanpak van jihadisten.</li>
+            <li>In Nederland gedraag je je. Als je dat doet, dan zijn de mogelijkheden eindeloos.</li>
+        </ul>
+        <img src="img/stemwijzerbackground.jpg">
         
     </section>
 
