@@ -74,6 +74,8 @@ function displayPredicted(results){
 }
 function getPredictionVoteDecision(userenteredtext){
     hideAllWarnings();
+    userenteredtext = removeDiacritics(userenteredtext);
+    console.log("without: " + userenteredtext);
     $("#computer_thinking").show();
     
     
@@ -105,7 +107,10 @@ function getPredictionVoteDecision(userenteredtext){
         }
     });      
 }
-
+function removeDiacritics(str) {
+    str = str.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
+   return str;
+}
 function hideAllWarnings(){
     $("#computer_thinking").hide()
     $("#computer_done").hide()
@@ -117,7 +122,9 @@ $(document).ready(function(){
     
     $("button").click(function(){
         var myText = $("#input_field_user").val();
-            myText = $.trim(myText)
+            myText = $.trim(myText);
+            
+
             getPredictionVoteDecision(myText);
     });
     
@@ -128,6 +135,8 @@ $(document).ready(function(){
         if(keycode == '13'){
             var myText = $("#input_field_user").val();
             myText = $.trim(myText)
+            
+
             getPredictionVoteDecision(myText);
             return false;
             
@@ -186,6 +195,12 @@ $(document).ready(function(){
   De computer is kapot... Probeer het nadat je onveilige scripts toe hebt gestaan:
     <img src="img/loadunsafe.png"></img>
 </div>
+      
+      Probeer eens:
+
+Door te werken aan een duurzame, reele economie creeren we groene en echte banen.
+Nederland versterkt de internationale terrorismebestrijding, de inlichtingendiensten en de aanpak van jihadisten.
+In Nederland gedraag je je. Als je dat doet, dan zijn de mogelijkheden eindeloos.
         
         
     </section>
