@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
+      
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
 <script type="text/javascript">
@@ -125,11 +126,14 @@ $(document).ready(function(){
       $('.mytextstuff').keypress(function(event){
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if(keycode == '13'){
-            console.log("pressed enter");
             var myText = $("#input_field_user").val();
             myText = $.trim(myText)
             getPredictionVoteDecision(myText);
+            return false;
+            
+
         }
+        
     });
   
 });
@@ -148,14 +152,24 @@ $(document).ready(function(){
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+      <style>
+      
+      textarea {
+  width: 80%;
+}
+      </style>
   </head>
   <body>
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
     <section class="main-content">
-        <textarea class="mytextstuff" id="input_field_user" rows="1" cols="90" type="text" placeholder="Dieren zijn belangrijk" value maxlength="150"></textarea>
-        <button>click here</button>
+        <h1>De stemwijzer met kunstmatige intelligentie</h1>
+        <h4>Voer een zin in om te bepalen welke partij bij jou past. <a href="http://www.pinchofintelligence.com/stemwijzer-met-kunstmatige-intelligentie/">Weten hoe dit werkt? Klik hier!</a></h4>
+        <h4>Enter a Dutch sentence to determine what party you should vote for in the upcoming Dutch election! <a href="http://www.pinchofintelligence.com/neural-voting-advice">Want to know how this works? Click here! </a></h4>
+        
+        <textarea class="mytextstuff" id="input_field_user" rows="1" width='300px' type="text" placeholder="Dieren zijn belangrijk" value maxlength="150"></textarea>
+        <button>Submit</button>
         
         
 
@@ -173,26 +187,6 @@ $(document).ready(function(){
     <img src="img/loadunsafe.png"></img>
 </div>
         
-        <h3>Wat kan ik invoeren?</h3>
-        Schrijf in een normale zin op wat je graag wilt met Nederland. Het beste is een zin die langer is dan 10 woorden en korter dan 20 woorden. Het beste werkt een zin die lijkt alsof hij uit een partijprogramma komt. Probeer eens: 
-        <ul>
-            <li>Door te werken aan een duurzame, reële economie creëren we groene en echte banen.</li>
-            <li>Nederland versterkt de internationale terrorismebestrijding, de inlichtingendiensten en de aanpak van jihadisten.</li>
-            <li>In Nederland gedraag je je. Als je dat doet, dan zijn de mogelijkheden eindeloos.</li>
-        </ul> 
-        <h3>Wat gebeurt hier?</h3>
-        Normaal stelt een stemwijzer je een hele hoop vragen, maar heb je niet de kans om zelf aan te geven wat je met Nederland wilt. Om dit te verhelpen wilde ik het volgende maken: je typt een zin in, en de computer bedenkt bij welke partij dit zou passen. 
-        Om dit te maken heb ik neurale netwerken gebruikt. Deze technieke uit de kunstmatige intelligentie "leest" de zin, en gaat dan gokken uit welk partijprogramma deze komt. 
-        <h3>Hoe heeft hij dat kunnen leren?</h3>
-        Van de meeste partijen staat het partijprogramma als PDF op hun site. Deze heb ik gedownload en opgeknipt in losse zinnen. Vervolgens "traint" de computer zichzelf door per zin zich af te vragen uit welk partijprogramma deze zin komt. Omdat de Partij voor de Vrijheid een klein partijprogramma heeft heb ik in plaats daarvan de tweets van Geert Wilders toegevoegd. Op een set van zinnen die hij nog nooit gezien heeft kan hij van 55% de juiste partij raden. 
-        <h3>Waarom leest de computer sommige woorden als _UNK?</h3>
-        Bij het lezen van de teksten worden alle woorden die minder dan 5 keer in alle partijprogrammas voorkomen weggelaten. Omdat je niet goed weet wat de woorden betekenen als je ze maar een paar keer ziet kan je hun context niet goed bepalen. Hierdoor dragen ze weinig bij aan bepalen wat elke partij er mee zou moeten. 
-        <h3>Waarom doet hij zin XXX verkeerd?</h3>
-        Wij mensen associeren bepaalde standpunten met bepaalde partijen. Soms komt dit idee niet overeen met wat dit programma als associatie heeft. Dit heeft twee belangrijke redenen. Ten eerste weten wij precies wat de betekenis van elk woord is. Als wij een partijprogramma voor de eerste keer lezen weten we dus ook meteen wat de partij precies bedoelt. Ten tweede hebben we meer informatie over de partijen dan alleen de partijprogramma's. De meeste informatie over partijen halen we uit de krant, van het journaal, door het kijken van debatten, niet uit de partijprogramma's dus. Als we meer informatie zouden toevoegen, zou dit programma het natuurlijk ook beter doen. 
-        <h3>Ik heb een opmerking/klacht/idee</h3>
-        Neem contact met me op via e-mail. 
-        <h3>Zijn er vergelijkbare sites?</h3>
-        Nadat ik mijn programma geschreven had kwam ik deze site tegen: http://www.bigdatarepublic.nl/stemradar/ . Het verschil is dat ze hier puur kijken naar de woorden in de zin, en niet de context.  
         
     </section>
 
