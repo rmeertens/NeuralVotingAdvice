@@ -123,6 +123,9 @@ function hideAllWarnings(){
 }
 $(document).ready(function(){
     hideAllWarnings();
+    if (window.location.protocol == "https:") {
+     window.location.protocol = "http:"
+    }
     
     $("button").click(function(){
         var myText = $("#input_field_user").val();
